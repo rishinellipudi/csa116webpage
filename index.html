@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Riddle Project 1.1.6</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #e0e7ef);
+            min-height: 100vh;
+        }
+
+        .container {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary {
+            background-image: linear-gradient(to right, #6EE7B7 0%, #34D399 51%, #10B981 100%);
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+        }
+
+        .btn-primary:hover {
+            background-position: right center; 
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .riddle-step {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 flex justify-center items-start">
+
+    <div class="container max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl p-8 md:p-12 my-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-2">Math Riddle Project 1.1.6</h1>
+            <p class="text-lg md:text-xl text-gray-600">A simple and engaging mathematical exploration by Rishi and Avi</p>
+        </header>
+
+        <section class="mb-12 border-b pb-8 border-gray-200">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Interactive Riddle Calculator</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 mb-6">
+                <input type="number" id="inputNumber" placeholder="Enter any number..." class="w-full md:w-auto px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-lg">
+                <button id="calculateBtn" class="btn-primary px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                    Solve the Riddle
+                </button>
+            </div>
+            
+            <div id="riddleOutput" class="bg-gray-50 rounded-2xl p-6 md:p-8 mt-6 border border-gray-100 min-h-[250px] flex flex-col justify-center">
+                <p id="initialMessage" class="text-center text-gray-400 font-medium text-lg">Enter a number above to see the magic happen!</p>
+            </div>
+        </section>
+
+        <section class="mb-12 border-b pb-8 border-gray-200">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">How the Riddle Works</h2>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                The riddle follows a simple algebraic sequence, which always results in the same number, regardless of your starting number. Let's see the steps:
+            </p>
+            <ol class="list-decimal list-inside space-y-4 text-gray-700 text-lg px-4 md:px-0">
+                <li><p><span class="font-bold">Choose any number</span> 
+                <li><p><span class="font-bold">Double it</span> 
+                <li><p><span class="font-bold">Add 6</span> 
+                <li><p><span class="font-bold">Divide it by half</span> 
+                <li><p><span class="font-bold">Subtract the number you started with</span> 
+            </ol>
+            <div class="flex justify-center mt-8">
+                <img src="diagram.png" alt="A diagram explaining the steps of the riddle" class="rounded-xl shadow-lg max-w-full h-auto">
+            </div>
+            <p class="text-gray-700 text-lg leading-relaxed mt-6 text-center font-bold">
+                After these steps, you’ll always end up with <span class="text-red-500">3</span> no matter what number you started with.
+            </p>
+        </section>
+
+        <section class="mb-12 border-b pb-8 border-gray-200">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Programming Concepts</h2>
+            <p class="text-gray-700 text-lg leading-relaxed text-center mb-6">This simple riddle project in Java demonstrates several fundamental programming concepts:</p>
+            <div class="flex justify-center mb-8">
+                <img src="code.png" alt="Screenshot of the Java code with comments" class="rounded-xl shadow-lg max-w-full h-auto">
+            </div>
+            <ul class="list-none space-y-4 text-gray-700 text-lg px-4 md:px-0">
+                <li class="flex items-start">
+                    <span class="text-2xl text-blue-500 mr-4 font-bold">•</span>
+                    <p>Use of the camelCase naming convention</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-2xl text-blue-500 mr-4 font-bold">•</span>
+                    <p>Both multiline and inline comments</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-2xl text-blue-500 mr-4 font-bold">•</span>
+                    <p>The `print` and `println` methods</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-2xl text-blue-500 mr-4 font-bold">•</span>
+                    <p>Variables</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-2xl text-blue-500 mr-4 font-bold">•</span>
+                    <p>Arithmetic expressions</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-2xl text-blue-500 mr-4 font-bold">•</span>
+                    <p>The compound assignment operator</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-2xl text-blue-500 mr-4 font-bold">•</span>
+                    <p>Conversion between `int` and `double` data types</p>
+                </li>
+            </ul>
+        </section>
+
+    <script>
+        document.getElementById('calculateBtn').addEventListener('click', () => {
+            const inputElement = document.getElementById('inputNumber');
+            const outputElement = document.getElementById('riddleOutput');
+            const initialNumber = parseFloat(inputElement.value);
+
+            if (isNaN(initialNumber)) {
+                outputElement.innerHTML = `<p class="text-center text-red-500 font-bold text-lg">Please enter a valid number.</p>`;
+                return;
+            }
+
+           outputElement.innerHTML = '';
+const initialMessage = document.getElementById('initialMessage');
+if (initialMessage) {
+    initialMessage.style.display = 'none';
+}
+
+let currentNumber = initialNumber;
+let steps = [];
+
+const step1Result = currentNumber;
+steps.push({
+    text: `<span class="font-bold text-gray-800">1. Choose an integer:</span> ${initialNumber}`,
+    value: step1Result
+});
+
+const step2Result = currentNumber * 2;
+steps.push({
+    text: `<span class="font-bold text-gray-800">2. Double it:</span> ${step1Result} * 2 = ${step2Result}`,
+    value: step2Result
+});
+currentNumber = step2Result;
+
+const step3Result = currentNumber + 6;
+steps.push({
+    text: `<span class="font-bold text-gray-800">3. Add 6:</span> ${step2Result} + 6 = ${step3Result}`,
+    value: step3Result
+});
+currentNumber = step3Result;
+
+const step4Result = currentNumber / 2;
+steps.push({
+    text: `<span class="font-bold text-gray-800">4. Divide by 2:</span> ${step3Result} / 2 = ${step4Result}`,
+    value: step4Result
+});
+currentNumber = step4Result;
+
+const step5Result = currentNumber - initialNumber;
+steps.push({
+    text: `<span class="font-bold text-gray-800">5. Subtract original number:</span> ${step4Result} - ${initialNumber} = ${step5Result}`,
+    value: step5Result
+});
+
+steps.push({
+    text: `<span class="font-bold text-gray-800">5. Subtract original number:</span> ${step4Result} - ${initialNumber} = ${step5Result}`,
+    value: step5Result
+});
+
+            
+            steps.forEach((step, index) => {
+                setTimeout(() => {
+                    const stepEl = document.createElement('p');
+                    stepEl.classList.add('riddle-step', 'text-gray-700', 'text-lg', 'leading-relaxed', 'mb-2');
+                    stepEl.innerHTML = step.text;
+
+                    if (index === steps.length - 1) {
+                        stepEl.classList.add('text-green-600', 'font-extrabold', 'mt-4');
+                        stepEl.innerHTML = `<span class="text-gray-800 font-bold">Final Result:</span> <span class="text-3xl">${step.value.toFixed(2)}</span>`;
+                    }
+                    
+                    outputElement.appendChild(stepEl);
+                    setTimeout(() => stepEl.style.opacity = '1', 50); 
+                    setTimeout(() => stepEl.style.transform = 'translateY(0)', 50); 
+                }, index * 1000);
+            });
+        });
+    </script>
+</body>
+</html>
+
